@@ -19,5 +19,5 @@ public class ClassroomEntity {
     @OneToMany(mappedBy = "classroom", fetch = FetchType.LAZY)
     private Set<StudentEntity> students;
     @OneToMany(mappedBy = "classroom", fetch = FetchType.LAZY)
-    private Set<ScheduleEntity> schedules;
+    private Set<LectureEntity> schedules;
 }

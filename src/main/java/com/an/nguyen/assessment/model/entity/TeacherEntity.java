@@ -18,5 +18,5 @@ public class TeacherEntity {
     private String emailAddress;
     private String name;
     @OneToMany(mappedBy = "teacher", fetch = FetchType.LAZY)
-    private Set<ScheduleEntity> schedules;
+    private Set<LectureEntity> schedules;
 }

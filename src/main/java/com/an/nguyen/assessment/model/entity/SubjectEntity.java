@@ -17,5 +17,5 @@ public class SubjectEntity {
     @Column(unique = true)
     private String name;
     @OneToMany(mappedBy = "subject", fetch = FetchType.LAZY)
-    private Set<ScheduleEntity> schedules;
+    private Set<LectureEntity> schedules;
 }

@@ -1,8 +1,9 @@
 package com.an.nguyen.assessment.controller;
 
-import com.an.nguyen.assessment.model.dto.StudentDTO;
 import com.an.nguyen.assessment.model.dto.TeacherDTO;
+import com.an.nguyen.assessment.model.response.TeacherReportResponse;
 import com.an.nguyen.assessment.service.TeacherService;
+import com.an.nguyen.assessment.utils.BusinessFlowException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,9 +36,9 @@ public class TeacherController {
         teacherService.delete(id);
     }
 
-    @GetMapping("/showStudent/{id}")
-    public List<StudentDTO> showStudentTeaching(@PathVariable Integer teacherId){
-        return teacherService.showStudentTeaching(teacherId);
+    @GetMapping("/report/{teacher_id}")
+    public TeacherReportResponse report(@PathVariable Integer teacherId) throws BusinessFlowException {
+        return teacherService.report(teacherId);
     }
 
 }

@@ -2,7 +2,9 @@ package com.an.nguyen.assessment.controller;
 
 import com.an.nguyen.assessment.model.dto.ClassroomDTO;
 import com.an.nguyen.assessment.model.dto.SubjectDTO;
+import com.an.nguyen.assessment.model.response.StudentReportResponse;
 import com.an.nguyen.assessment.service.SubjectService;
+import com.an.nguyen.assessment.utils.BusinessFlowException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,5 +32,10 @@ public class SubjectController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
         subjectService.delete(id);
+    }
+
+    @GetMapping("/report/{subject_id}")
+    public Object report(@PathVariable Integer subjectId) throws BusinessFlowException {
+        return null;
     }
 }

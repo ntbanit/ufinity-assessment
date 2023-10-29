@@ -1,5 +1,6 @@
 package com.an.nguyen.assessment.model.entity;
 
+import com.an.nguyen.assessment.model.StudentType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ public class StudentEntity {
     @Column(unique = true)
     private String emailAddress;
     private String name;
+    private StudentType type;
     @ManyToOne
     @JoinColumn(name = "classroom_id")
     private ClassroomEntity classroom;

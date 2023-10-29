@@ -1,9 +1,8 @@
 package com.an.nguyen.assessment.service;
 
 import com.an.nguyen.assessment.model.dto.ClassroomDTO;
-import com.an.nguyen.assessment.model.dto.TeacherDTO;
 import com.an.nguyen.assessment.model.entity.ClassroomEntity;
-import com.an.nguyen.assessment.model.entity.ScheduleEntity;
+import com.an.nguyen.assessment.model.entity.LectureEntity;
 import com.an.nguyen.assessment.model.entity.SubjectEntity;
 import com.an.nguyen.assessment.model.entity.TeacherEntity;
 import com.an.nguyen.assessment.repository.ClassroomRepository;
@@ -59,8 +58,8 @@ public class ClassroomService {
         if(subject == null){
             throw new BusinessFlowException("Subject not found");
         }
-        Set<ScheduleEntity> theSchedules = classroom.getSchedules();
-        ScheduleEntity schedule = new ScheduleEntity();
+        Set<LectureEntity> theSchedules = classroom.getSchedules();
+        LectureEntity schedule = new LectureEntity();
         schedule.setTeacher(teacher);
         schedule.setSubject(subject);
         theSchedules.add(schedule);

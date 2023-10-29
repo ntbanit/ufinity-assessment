@@ -5,12 +5,15 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
+import java.util.Set;
+
 @Getter
 @Setter
 public class TeacherDTO {
     private Integer id;
     private String emailAddress;
     private String name;
+    private Set<ScheduleDTO> theSchedules;
 
     public static TeacherDTO convertToDto(TeacherEntity entity) {
         if (entity == null) return null;

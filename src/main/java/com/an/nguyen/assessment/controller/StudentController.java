@@ -1,6 +1,7 @@
 package com.an.nguyen.assessment.controller;
 
 import com.an.nguyen.assessment.model.dto.StudentDTO;
+import com.an.nguyen.assessment.model.response.StudentReportResponse;
 import com.an.nguyen.assessment.service.StudentService;
 import com.an.nguyen.assessment.utils.BusinessFlowException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,9 @@ public class StudentController {
     @GetMapping("/join/{student_id}/{classroom_id}")
     public StudentDTO get(@PathVariable Integer studentId, @PathVariable Integer classroomId) throws BusinessFlowException {
         return studentService.joinClassroom(studentId, classroomId);
+    }
+    @GetMapping("/report/{student_id}")
+    public StudentReportResponse report(@PathVariable Integer studentId) throws BusinessFlowException {
+        return studentService.getTeachersAndSubjects(studentId);
     }
 }
